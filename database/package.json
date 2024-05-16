@@ -1,0 +1,28 @@
+{
+  "name": "@frm/database",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "prisma generate",
+    "format": "prisma format",
+    "migrate": "dotenv -e .env.development -- prisma migrate dev",
+    "seed": "dotenv -e .env.development -- tsx prisma/seed.ts",
+    "studio": "dotenv -e .env.development -- prisma studio"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.14.0",
+    "prisma": "^4.14.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.4",
+    "@tsconfig/strictest": "^2.0.5",
+    "@types/node": "^18.11.17",
+    "dotenv-cli": "7.0.0",
+    "tsx": "^4.10.2",
+    "typescript": "^4.9.5"
+  },
+  "prisma": {
+    "seed": "tsx tsconfig.json prisma/seed.ts"
+  }
+}

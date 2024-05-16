@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ReleaseStatus {
+  active
+  inactive
+  unstable
+}
+
+model Deployment {
+  assets       String[]
+  releaseId    String
+  releaseDate  DateTime?
+  createdAt    DateTime      @default(now())
+  status       ReleaseStatus @default(inactive)
+  frontendName String
+
+  @@id([releaseId, frontendName])
+  @@index([frontendName])
+  @@index([frontendName, status])
+  @@index([frontendName, status, releaseDate])
+}

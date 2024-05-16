@@ -1,0 +1,24 @@
+openapi: "3.0.0"
+info:
+  title: Frontend Release Manager
+  version: 1.0.0
+  description: it manages the frontend releases
+
+paths:
+  /readiness:
+    get:
+      summary: Readiness check
+      description: >
+        Provides an application readiness check
+      responses:
+        200:
+          description: Ok
+
+  /liveness:
+    get:
+      summary: Liveness check
+      description: >
+        Provides an application liveness check
+      responses:
+        200:
+          description: Ok

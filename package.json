@@ -1,0 +1,11 @@
+{
+  "name": "frontend-release-manager",
+  "version": "1.0.0",
+  "description": "Frontend Release Manager",
+  "private": true,
+  "scripts": {},
+  "engines": {
+    "node": ">= 20",
+    "pnpm": ">=7.14 <8"
+  }
+}
