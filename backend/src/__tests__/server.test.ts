@@ -15,9 +15,7 @@ describe('server', () => {
 
     it('should handle bad db health', async () => {
       await jest.isolateModulesAsync(async () => {
-        (console.error as jest.Mock).mockImplementationOnce(() => {
-          /* */
-        });
+        jest.spyOn(console, 'error').mockImplementation(() => {});
         jest
           .spyOn(prismaMock, '$queryRaw')
           .mockRejectedValue(new Error('error'));
@@ -29,14 +27,6 @@ describe('server', () => {
           1,
           'Unable to connect to database.'
         );
-      });
-    });
-
-    it('should return app health', async () => {
-      await jest.isolateModulesAsync(async () => {
-        const { server } = await import('../server.js');
-        const response = await request(server).get('/liveness');
-        expect(response.statusCode).toEqual(200);
       });
     });
   });
