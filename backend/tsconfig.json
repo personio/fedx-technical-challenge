@@ -1,11 +1,8 @@
 {
-  "extends": [
-    "@tsconfig/node20/tsconfig.json",
-    "@tsconfig/strictest/tsconfig.json"
-  ],
+  "extends": "@tsconfig/node20/tsconfig.json",
   "include": ["src/**/*.ts", "src/db.ts", "index.ts"],
   "exclude": ["src/testSetup/**/*.ts", "**/*.test.ts"],
   "compilerOptions": {
     "outDir": "dist"
-  }
+  },
 }
