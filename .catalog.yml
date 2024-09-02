@@ -1,0 +1,3 @@
+# yaml-language-server: $schema=https://service-catalog.tools.personio-internal.de/api/v1/jsonschema
+---
+exclude: true
