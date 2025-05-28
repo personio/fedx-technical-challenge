@@ -1,2 +1,6 @@
 ---
-exclude: true
+version: "1"
+component:
+    team: FEDX
+    tags:
+        - hidden
